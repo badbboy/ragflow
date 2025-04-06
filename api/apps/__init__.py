@@ -92,6 +92,9 @@ login_manager.init_app(app)
 
 commands.register_commands(app)
 
+# 导入并注册MCP蓝图
+from api.apps.mcp_app import mcp_bp
+app.register_blueprint(mcp_bp)
 
 def search_pages_path(pages_dir):
     app_path_list = [
